@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicurate - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">Medicurate</div>
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <a href="#dashboard"><i class="fas fa-chart-line"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#schedule"><i class="fas fa-calendar-alt"></i> Schedule</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#dispenser"><i class="fas fa-pills"></i> Dispenser Control</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reports"><i class="fas fa-file-medical-alt"></i> Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+            </ul>
+            <div class="user-info">
+                <img src="/api/placeholder/40/40" alt="User" class="user-avatar">
+                <div class="user-details">
+                    <p class="user-name">John Doe</p>
+                    <a href="index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <header class="content-header">
+                <h1>Dashboard</h1>
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Overview Cards -->
+            <section class="overview-cards">
+                <div class="card">
+                    <div class="card-icon blue">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Adherence Rate</h3>
+                        <p class="card-value">92%</p>
+                        <p class="card-change positive">+5% from last week</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon purple">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Medications</h3>
+                        <p class="card-value">12</p>
+                        <p class="card-secondary">4 slots in use</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon teal">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Refrigerated Slot</h3>
+                        <p class="card-value">4°C</p>
+                        <p class="card-secondary">Optimal</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon orange">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Refill Needed</h3>
+                        <p class="card-value">2</p>
+                        <p class="card-change negative">Within 3 days</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dispenser Status -->
+            <section class="dispenser-status">
+                <div class="section-header">
+                    <h2>Dispenser Status</h2>
+                    <button class="btn btn-primary"><i class="fas fa-sync-alt"></i> Refresh</button>
+                </div>
+                <div class="dispenser-grid">
+                    <div class="dispenser-slot">
+                        <div class="slot-header">
+                            <h3>Pill Slot 1</h3>
+                            <span class="status active">Active</span>
+                        </div>
+                        <div class="slot-info">
+                            <p><strong>Medication:</strong> Lisinopril</p>
+                            <p><strong>Dosage:</strong> 10mg</p>
+                            <p><strong>Next Dose:</strong> Today, 9:00 PM</p>
+                            <p><strong>Remaining:</strong> 24 pills (8 days)</p>
+                        </div>
+                        <div class="slot-actions">
+                            <button class="btn btn-outline btn-sm">Dispense Now</button>
+                            <button class="btn btn-primary btn-sm">Edit</button>
+                        </div>
+                    </div>
+                    <div class="dispenser-slot">
+                        <div class="slot-header">
+                            <h3>Pill Slot 2</h3>
+                            <span class="status active">Active</span>
+                        </div>
+                        <div class="slot-info">
+                            <p><strong>Medication:</strong> Metformin</p>
+                            <p><strong>Dosage:</strong> 500mg</p>
+                            <p><strong>Next Dose:</strong> Tomorrow, 8:00 AM</p>
+                            <p><strong>Remaining:</strong> 15 pills (7 days)</p>
+                        </div>
+                        <div class="slot-actions">
+                            <button class="btn btn-outline btn-sm">Dispense Now</button>
+                            <button class="btn btn-primary btn-sm">Edit</button>
+                        </div>
+                    </div>
+                    <div class="dispenser-slot">
+                        <div class="slot-header">
+                            <h3>Refrigerated Slot</h3>
+                            <span class="status active">Active</span>
+                        </div>
+                        <div class="slot-info">
+                            <p><strong>Medication:</strong> Insulin</p>
+                            <p><strong>Storage Temp:</strong> 4°C</p>
+                            <p><strong>Next Dose:</strong> Today, 6:00 PM</p>
+                            <p><strong>Remaining:</strong> 6 doses</p>
+                        </div>
+                        <div class="slot-actions">
+                            <button class="btn btn-outline btn-sm">Dispense Now</button>
+                            <button class="btn btn-primary btn-sm">Edit</button>
+                        </div>
+                    </div>
+                    <div class="dispenser-slot">
+                        <div class="slot-header">
+                            <h3>Syrup Slot</h3>
+                            <span class="status inactive">Inactive</span>
+                        </div>
+                        <div class="slot-info">
+                            <p><strong>Medication:</strong> Not configured</p>
+                            <p><strong>Dosage:</strong> -</p>
+                            <p><strong>Next Dose:</strong> -</p>
+                            <p><strong>Remaining:</strong> -</p>
+                        </div>
+                        <div class="slot-actions">
+                            <button class="btn btn-primary btn-sm">Configure</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Medication Schedule -->
+            <section class="medication-schedule">
+                <div class="section-header">
+                    <h2>Today's Schedule</h2>
+                    <button class="btn btn-outline">View Full Schedule</button>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item completed">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">8:00 AM</div>
+                            <div class="timeline-details">
+                                <h4>Morning Medications</h4>
+                                <ul>
+                                    <li>Lisinopril (10mg) - 1 pill</li>
+                                    <li>Vitamin D (1000 IU) - 1 pill</li>
+                                </ul>
+                                <span class="timeline-status">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item completed">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">1:00 PM</div>
+                            <div class="timeline-details">
+                                <h4>Afternoon Medications</h4>
+                                <ul>
+                                    <li>Metformin (500mg) - 1 pill</li>
+                                </ul>
+                                <span class="timeline-status">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item current">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">6:00 PM</div>
+                            <div class="timeline-details">
+                                <h4>Evening Medications</h4>
+                                <ul>
+                                    <li>Insulin - 10 units</li>
+                                </ul>
+                                <span class="timeline-status">Due in 1 hour</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-time">9:00 PM</div>
+                            <div class="timeline-details">
+                                <h4>Night Medications</h4>
+                                <ul>
+                                    <li>Lisinopril (10mg) - 1 pill</li>
+                                    <li>Metformin (500mg) - 1 pill</li>
+                                </ul>
+                                <span class="timeline-status">Upcoming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Adherence Chart -->
+            <section class="adherence-chart">
+                <div class="section-header">
+                    <h2>Weekly Adherence</h2>
+                    <div class="chart-period">
+                        <button class="btn btn-sm period-btn active">Week</button>
+                        <button class="btn btn-sm period-btn">Month</button>
+                        <button class="btn btn-sm period-btn">Year</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart">
+                        <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Grid lines -->
+                            <line x1="50" y1="250" x2="650" y2="250" stroke="#e1e5ed" stroke-width="1" />
+                            <line x1="50" y1="200" x2="650" y2="200" stroke="#e1e5ed" stroke-width="1" />
+                            <line x1="50" y1="150" x2="650" y2="150" stroke="#e1e5ed" stroke-width="1" />
+                            <line x1="50" y1="100" x2="650" y2="100" stroke="#e1e5ed" stroke-width="1" />
+                            <line x1="50" y1="50" x2="650" y2="50" stroke="#e1e5ed" stroke-width="1" />
+                            
+                            <!-- Y-axis -->
+                            <line x1="50" y1="50" x2="50" y2="250" stroke="#e1e5ed" stroke-width="1" />
+                            <text x="30" y="250" text-anchor="end" fill="#8c91a0" font-size="12">0%</text>
+                            <text x="30" y="200" text-anchor="end" fill="#8c91a0" font-size="12">25%</text>
+                            <text x="30" y="150" text-anchor="end" fill="#8c91a0" font-size="12">50%</text>
+                            <text x="30" y="100" text-anchor="end" fill="#8c91a0" font-size="12">75%</text>
+                            <text x="30" y="50" text-anchor="end" fill="#8c91a0" font-size="12">100%</text>
+                            
+                            <!-- X-axis -->
+                            <text x="90" y="270" text-anchor="middle" fill="#8c91a0" font-size="12">Mon</text>
+                            <text x="180" y="270" text-anchor="middle" fill="#8c91a0" font-size="12">Tue</text>
+                            <text x="270" y="270" text-anchor="middle" fill="#8c91a0" font-size="12">Wed</text>
+                            <text x="360" y="270" text-anchor="middle" fill="#8c91a0" font-size="12">Thu</text>
+                            <text x="450" y="270" text-anchor="middle" fill="#8c91a0" font-size="12">Fri</text>
+                            <text x="540" y="270" text-anchor="middle" fill="#8c91a0" font-size="12">Sat</text>
+                            <text x="630" y="270" text-anchor="middle" fill="#8c91a0" font-size="12">Sun</text>
+                            
+                            <!-- Data bars -->
+                            <rect x="60" y="70" width="60" height="180" rx="3" fill="#4f97ff" opacity="0.8" />
+                            <rect x="150" y="90" width="60" height="160" rx="3" fill="#4f97ff" opacity="0.8" />
+                            <rect x="240" y="60" width="60" height="190" rx="3" fill="#4f97ff" opacity="0.8" />
+                            <rect x="330" y="50" width="60" height="200" rx="3" fill="#4f97ff" opacity="0.8" />
+                            <rect x="420" y="80" width="60" height="170" rx="3" fill="#4f97ff" opacity="0.8" />
+                            <rect x="510" y="65" width="60" height="185" rx="3" fill="#4f97ff" opacity="0.8" />
+                            <rect x="600" y="95" width="60" height="155" rx="3" fill="#4f97ff" opacity="0.8" />
+                            
+                            <!-- Data points -->
+                            <circle cx="90" cy="70" r="4" fill="#4f97ff" />
+                            <circle cx="180" cy="90" r="4" fill="#4f97ff" />
+                            <circle cx="270" cy="60" r="4" fill="#4f97ff" />
+                            <circle cx="360" cy="50" r="4" fill="#4f97ff" />
+                            <circle cx="450" cy="80" r="4" fill="#4f97ff" />
+                            <circle cx="540" cy="65" r="4" fill="#4f97ff" />
+                            <circle cx="630" cy="95" r="4" fill="#4f97ff" />
+                            
+                            <!-- Data line -->
+                            <path d="M90 70 L180 90 L270 60 L360 50 L450 80 L540 65 L630 95" stroke="#4f97ff" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <div class="chart-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background-color: #4f97ff;"></span>
+                            <span class="legend-label">Adherence Rate</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-icon"><i class="fas fa-check-circle"></i></span>
+                            <span class="legend-label">Weekly Average: 92%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="recent-activity">
+                <div class="section-header">
+                    <h2>Recent Activity</h2>
+                    <button class="btn btn-outline">View All</button>
+                </div>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon green">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Medication Taken</h4>
+                            <p>Lisinopril (10mg) - 1 pill</p>
+                            <span class="activity-time">Today, 8:03 AM</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon green">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Medication Taken</h4>
+                            <p>Vitamin D (1000 IU) - 1 pill</p>
+                            <span class="activity-time">Today, 8:03 AM</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon blue">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Schedule Updated</h4>
+                            <p>Added new medication: Vitamin D</p>
+                            <span class="activity-time">Yesterday, 4:30 PM</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon orange">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <h4>Refill Alert</h4>
+                            <p>Metformin is running low (7 days remaining)</p>
+                            <span class="activity-time">Yesterday, 2:15 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

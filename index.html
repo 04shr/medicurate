@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicurate - Automated Pill Dispenser</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">Medicurate</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#components">Components</a>
+                <a href="#about">About</a>
+                <a href="#" class="btn-toggle login-toggle">Login</a>
+                <a href="#" class="btn btn-primary signup-toggle">Sign Up</a>
+                <a href="dashboard.html" class="btn btn-primary dashboard-btn hidden">Dashboard</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Automated Pill Dispenser</h1>
+                    <p>An innovative and technologically advanced solution designed to streamline medication management for individuals with diverse healthcare needs.</p>
+                    <div class="cta-buttons">
+                        <a href="#features" class="btn btn-primary">Explore Features</a>
+                        <a href="#" class="btn btn-outline signup-toggle">Get Started</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="product-preview">
+                        <img src="image.png" alt="Medicurate Pill Dispenser" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <section id="features" class="features-section">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-pills"></i></div>
+                        <h3>Multiple Medication Forms</h3>
+                        <p>Dispenses various forms of medication including tablets, capsules, refrigerated drugs, and syrups.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                        <h3>Medication Reminders</h3>
+                        <p>Timely audio and visual alerts to ensure you never miss a dose again.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>IoT Connectivity</h3>
+                        <p>Remote monitoring and control via mobile app, allowing caregivers to track medication schedules.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-thermometer-half"></i></div>
+                        <h3>Temperature Control</h3>
+                        <p>Built-in Peltier module for refrigerated medications that require specific storage conditions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Components Section -->
+            <section id="components" class="components-section">
+                <h2>Key Components</h2>
+                <div class="components-grid">
+                    <div class="component-card">
+                        <div class="component-icon"><i class="fas fa-microchip"></i></div>
+                        <h3>ESP32 Microcontroller</h3>
+                        <p>Powerful dual-core processing with built-in Wi-Fi and Bluetooth connectivity for IoT capabilities.</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon"><i class="fas fa-cog"></i></div>
+                        <h3>Servomotors</h3>
+                        <p>Precise control over angular position for accurate medication dispensing from each slot.</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon"><i class="fas fa-cube"></i></div>
+                        <h3>3D Printed Slots</h3>
+                        <p>Custom-designed PLA compartments for various medication types with precise measurements.</p>
+                    </div>
+                    <div class="component-card">
+                        <div class="component-icon"><i class="fas fa-snowflake"></i></div>
+                        <h3>Peltier Module</h3>
+                        <p>Thermoelectric device that creates temperature differential for cooling medications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Authentication Forms -->
+            <div class="auth-container hidden" id="login-form">
+                <div class="auth-form">
+                    <h2>Login</h2>
+                    <span class="close-form">&times;</span>
+                    <form>
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary login-btn">Login</button>
+                        <p class="form-switch">Don't have an account? <a href="#" class="signup-toggle">Sign up</a></p>
+                    </form>
+                </div>
+            </div>
+
+            <div class="auth-container hidden" id="signup-form">
+                <div class="auth-form">
+                    <h2>Sign Up</h2>
+                    <span class="close-form">&times;</span>
+                    <form>
+                        <div class="form-group">
+                            <label for="signup-name">Full Name</label>
+                            <input type="text" id="signup-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-email">Email</label>
+                            <input type="email" id="signup-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input type="password" id="signup-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signup-confirm">Confirm Password</label>
+                            <input type="password" id="signup-confirm" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary signup-btn">Create Account</button>
+                        <p class="form-switch">Already have an account? <a href="#" class="login-toggle">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Medicurate. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle login form
+        document.querySelectorAll('.login-toggle').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('login-form').classList.remove('hidden');
+                document.getElementById('signup-form').classList.add('hidden');
+            });
+        });
+
+        // Toggle signup form
+        document.querySelectorAll('.signup-toggle').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('signup-form').classList.remove('hidden');
+                document.getElementById('login-form').classList.add('hidden');
+            });
+        });
+
+        // Close form
+        document.querySelectorAll('.close-form').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('login-form').classList.add('hidden');
+                document.getElementById('signup-form').classList.add('hidden');
+            });
+        });
+
+        // Simulate login
+        document.querySelector('.login-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Hide login/signup buttons
+            document.querySelectorAll('.login-toggle, .signup-toggle').forEach(item => {
+                item.classList.add('hidden');
+            });
+            // Show dashboard button
+            document.querySelector('.dashboard-btn').classList.remove('hidden');
+            // Hide form
+            document.getElementById('login-form').classList.add('hidden');
+        });
+
+        // Simulate signup
+        document.querySelector('.signup-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Hide login/signup buttons
+            document.querySelectorAll('.login-toggle, .signup-toggle').forEach(item => {
+                item.classList.add('hidden');
+            });
+            // Show dashboard button
+            document.querySelector('.dashboard-btn').classList.remove('hidden');
+            // Hide form
+            document.getElementById('signup-form').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
