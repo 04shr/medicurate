@@ -13,8 +13,13 @@
 <body>
     <div id="app">
         <!-- Navbar -->
+         <!-- Add this right after the logo div in your navbar -->
+
         <nav class="navbar">
             <div class="logo">Medicurate</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#components">Components</a>
@@ -202,6 +207,42 @@
             // Hide form
             document.getElementById('signup-form').classList.add('hidden');
         });
+
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+    
+    // Close menu when clicking a link
+    const mobileLinks = document.querySelectorAll('.nav-links a');
+    
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 640) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 640) {
+            const isClickInsideNav = navLinks.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        }
+    });
+});
     </script>
 </body>
 </html>
